@@ -1,0 +1,28 @@
+class GFG
+{
+   Node Delete(Node head)
+   {
+	  Node temp,prev;
+	  temp = head;
+	  prev = temp;
+	  int cnt = 0, i = 0;
+	  
+	  while(temp.next != null)
+	  {
+	      temp = temp.next;
+	      cnt++;
+	  }
+	  cnt++; 
+	  cnt = (cnt/2) + 1;
+	  temp = head;
+	  while(i < cnt-1 && temp.next != null)
+	  {
+	      prev = temp;
+	      temp = temp.next;
+	      i++;
+	  }
+	  
+	  prev.next = temp.next;
+	  return head;
+   }
+}
