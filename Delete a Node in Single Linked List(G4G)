@@ -1,0 +1,30 @@
+class GfG
+{
+    Node deleteNode(Node head, int x)
+    {
+	     Node temp,prev;
+	     int cnt = 1;
+        temp = head;
+        prev = temp;
+        if(x == 1)
+        head = head.next;
+        else
+        {
+            while(cnt != x && temp.next != null)
+            {
+                prev = temp;
+                temp = temp.next;
+                cnt++;
+            }
+            if(cnt == x)
+            {
+                prev.next = temp.next;
+            }
+            if(temp.next == null)
+            {
+                prev.next = null;
+            }
+        }
+         return head;
+    }
+}
