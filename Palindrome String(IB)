@@ -1,0 +1,25 @@
+public class Solution {
+    public int isPalindrome(String A) {
+        String s1="";
+        
+        for(int i=0;i<A.length();i++)
+        {
+            if(A.charAt(i) != ',' ||A.charAt(i) != '.' || A.charAt(i) != '/' || A.charAt(i) != ':' || A.charAt(i) != ' ')
+                {
+                        s1 += A.charAt(i);
+                }
+        }
+        int i=0,j=A.length()-1,cnt=0;
+        for(;i<A.length()/2 && j>=A.length()/2;i++,j--)
+        {
+            if(A.charAt(i) == A.charAt(j))
+            {
+                cnt++;
+            }
+        }
+        if(cnt == A.length()/2)
+            return 0;
+        else 
+            return 1;
+    }
+}
