@@ -1,0 +1,21 @@
+
+public class Solution {
+    public int solve(String A) {
+        int ans = 0;
+        
+        A = A.toUpperCase();
+        for(int i=0;i<A.length();i++)
+        {
+            if(A.charAt(i) == 'A' || A.charAt(i) == 'E' || A.charAt(i) == 'I' || A.charAt(i) == 'O' || A.charAt(i) == 'U')
+            {
+                ans += (A.length() - i);
+            }
+            
+            if(ans > 10003)
+                ans = ans % 10003;
+        }
+        return ans;
+    }
+    
+    
+}
