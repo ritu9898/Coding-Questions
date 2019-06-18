@@ -1,0 +1,16 @@
+public class Solution {
+    // DO NOT MODIFY THE LIST. IT IS READ ONLY
+    public int lengthOfLastWord(final String A) {
+        String[] sb = new String[A.length()];
+        int i = 0;
+        sb = A.split(" ");
+        for (String string : sb) {
+            i++;
+        }
+
+        if(i == 0)
+            return 0;
+        else
+           return sb[i-1].length();
+    }
+}
