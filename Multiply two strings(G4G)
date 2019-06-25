@@ -1,0 +1,8 @@
+class GfG{
+    public String multiply(String a,String b){
+       BigInteger s1 = new BigInteger(a);
+       BigInteger s2 = new BigInteger(b);
+       BigInteger res = s1.multiply(s2);
+       return res.toString();
+    }
+}
