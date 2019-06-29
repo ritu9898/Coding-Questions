@@ -1,0 +1,22 @@
+ static DoublyLinkedListNode reverse(DoublyLinkedListNode head) {
+
+             DoublyLinkedListNode temp,p;
+             Stack<Integer> s = new Stack<>();
+             temp = head;
+             p = head;
+             while(temp.next != null)
+             {
+                 s.push(temp.data);
+                 temp = temp.next;
+             }   
+             s.push(temp.data);
+               
+            while(temp.prev != null)
+            {
+                p.data = s.pop();
+                temp = temp.prev;
+                p = p.next;
+            }    
+            p.data = s.pop();
+            return head;
+    }
