@@ -1,0 +1,43 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+    
+	public static void main (String[] args) throws Exception{
+	    InputStreamReader in = new InputStreamReader(System.in);
+	    BufferedReader br = new BufferedReader(in);
+	    
+		int t;
+		String s;
+		
+		//Enter t ::
+		t = Integer.parseInt(br.readLine());
+		while(t-- != 0)
+		{
+		    //Enter a String ::
+		    s = br.readLine();
+		    str_split(s);
+		}
+	}
+	
+	static void str_split(String s)
+	{ 
+	    s = s.trim();
+	    int len = 0;
+	    for(int i=0;i<s.length();i++)
+	    {
+	        if(s.charAt(i) == ' ')
+	        {
+	            len = 0;
+	        }
+	        else
+	        {
+	            len++;
+	        }
+	    }
+	    System.out.println(len);
+	}
+}
