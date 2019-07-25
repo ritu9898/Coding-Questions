@@ -1,0 +1,58 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) throws Exception{
+		
+		InputStreamReader in = new InputStreamReader(System.in);
+		BufferedReader br = new BufferedReader(in);
+		
+		int n,t;
+		
+		//Enter t ::
+		t = Integer.parseInt(br.readLine());
+		
+		while(t-- != 0)
+		{
+		    //Enter n ::
+		    n = Integer.parseInt(br.readLine());
+	        ToBinary(n);   
+		}
+	}
+	
+	static void ToBinary(int n)
+	{
+	    String s = "",s1 = "";
+	    while(n != 0)
+	    {
+	        s += Integer.toString(n % 2);
+	        n = n / 2;
+	    }
+	    s = reverse(s);
+	    if(s.length() != 14)
+	    {
+	        int x = 14 - s.length(),i=0;
+	        while(i != x)
+	        {
+	            s1 += "0";
+	            i++;
+	        }
+	        s1 += s.substring(0);
+	    }
+	    System.out.println(s1);
+	    
+	}
+	
+	static String reverse(String s)
+	{
+	    String sb = new String();
+	    for(int i=s.length()-1;i>=0;i--)
+	    {
+	        sb += s.charAt(i);
+	    }
+	    return sb;
+	}
+}
