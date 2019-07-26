@@ -1,0 +1,18 @@
+class GfG
+{
+    public static void pairwiseSwap(Node node)
+    {
+        
+       Node temp;
+       
+       if(node == null)
+            return;
+        if(node.next == null)
+            return;
+       temp = node;
+       int x = temp.data;
+       temp.data = temp.next.data;
+       temp.next.data = x;
+       pairwiseSwap(temp.next.next);
+    }
+}
