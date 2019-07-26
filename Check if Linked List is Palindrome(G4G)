@@ -1,0 +1,37 @@
+class Palindrome
+{
+    // Function to check if linked list is palindrome
+    boolean isPalindrome(Node head) 
+    {
+        String s = "",s1[];
+        int i,j,cnt=0;
+        Node temp = head;
+        while(temp.next != null)
+        {
+            s += Integer.toString(temp.data);
+            temp = temp.next;
+            s += ",";
+        }
+        s += Integer.toString(temp.data);
+        s1 = s.trim().split(",");
+    
+        for(i=0,j=s1.length-1;i<s1.length/2 && j>=s1.length/2;i++,j--)
+        {
+            if(s1[i].equals(s1[j]))
+            {
+                cnt++;
+            }
+            else
+            {
+                break;
+            }
+        }
+      
+        if(cnt == s1.length/2)
+        {
+            return true;
+        }
+        else
+            return false;
+    }    
+}
