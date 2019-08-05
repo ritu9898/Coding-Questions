@@ -1,0 +1,48 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) throws Exception{
+		
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		
+		int t,n,a[],d;
+		//Enter t ::
+		t = Integer.parseInt(br.readLine());
+		while(t-- != 0)
+		{
+		    //Enter n ::
+		    n = Integer.parseInt(br.readLine());
+		    a = new int[n];
+		    String s[] = br.readLine().split(" ");
+		    for(int i=0;i<n;i++)
+		    {
+		        //Enter a[i] ::
+		        a[i] = Integer.parseInt(s[i]);
+		    }
+		    //Enter d ::
+		    d = Integer.parseInt(br.readLine());
+		    rotate(a,n,d);
+		}
+	}
+	
+	static void rotate(int a[],int n,int d)
+	{
+	    StringBuffer sb = new StringBuffer();
+	    int i=d,j=0;
+	    while(i < n)
+	    {
+	        sb.append(a[i] + " ");
+	        i++;
+	    }
+	    while(j != d)
+	    {
+	        sb.append(a[j] + " ");
+	        j++;
+	    }
+	    System.out.println(sb);
+	}
+}
