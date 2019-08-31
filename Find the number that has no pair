@@ -1,0 +1,22 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) throws Exception{
+	    
+	    InputStreamReader in = new InputStreamReader(System.in);
+	    BufferedReader br = new BufferedReader(in);
+	    
+	    int i,ans=0;
+	    int a[];
+	    String s[] = br.readLine().split(",");
+	    a = new int[s.length];
+	    for(i=0;i<s.length;i++)
+	    {
+	        a[i] = Integer.parseInt(s[i]);
+	        ans ^= a[i];
+	    }
+	    System.out.println(ans);
+	}
+}
