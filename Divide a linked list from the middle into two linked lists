@@ -1,0 +1,72 @@
+/*package whatever //do not write package name here */
+
+import java.io.*;
+import java.util.*;
+
+
+class linked
+{
+    int data;
+    linked next;
+    
+    public linked()
+    {
+        
+    }
+    
+    public static void print(linked l)
+    {
+        while(l.next != null)
+        {
+            System.out.printf(l.data + " => ");
+            l = l.next;
+        }
+        System.out.println("END");
+    }
+}
+
+
+class GFG {
+    
+	public static void main (String[] args) throws Exception{
+	    
+	    InputStreamReader in = new InputStreamReader(System.in);
+	    BufferedReader br = new BufferedReader(in);
+	    
+	    linked l = new linked();
+	    linked temp = l;
+	    int i=0;
+	    String s = new String();
+	    s = br.readLine();
+	    
+	    for(;i<s.length();i++)
+	    {
+	        l.data = Character.getNumericValue(s.charAt(i));
+	        l.next = new linked();
+	        l = l.next;
+	    }
+	    l = null;
+	    linked.print(temp);
+	    middle(temp);
+	}
+	
+	public static void middle(linked l)
+	{
+	    linked temp,fast,slow;
+	    fast = l;
+	    slow = l;
+	    temp = slow;
+	    while(fast.next != null && fast != null)
+	    {
+	        slow = slow.next;
+	        fast = fast.next.next;   
+	    }
+	    fast = slow;
+	    linked.print(fast);
+	    slow.next = null;
+	    linked.print(temp);
+	   
+	    
+	}
+	
+}
