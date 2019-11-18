@@ -1,0 +1,15 @@
+public class Solution {
+    public int isPalindrome(String A) {
+        A = A.toLowerCase();
+        String a = new String();
+        a = A.replaceAll("[.,: \"]","");
+        //System.out.println(a);
+        int i=0,j=a.length()-1;
+        for(;i<j;i++,j--)
+        {
+            if(a.charAt(i) != a.charAt(j))
+                return 0;
+        }
+        return 1;
+    }
+}
