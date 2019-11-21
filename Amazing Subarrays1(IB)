@@ -1,0 +1,24 @@
+public class Solution {
+    public int solve(String A) {
+        
+        int i,j;
+        A = A.toLowerCase();
+        int x=0;
+        
+        for(i=0;i<A.length();i++)
+        {
+            if(A.charAt(i) == 'a' || A.charAt(i) == 'e' || A.charAt(i) == 'i' 
+            || A.charAt(i) == 'o' || A.charAt(i) == 'u')
+            {
+                 x += cnt(A,i);
+            }
+        }
+        return x%10003;
+    }
+    
+    public static int cnt(String s,int i)
+    {
+        int cnt = s.length()-i;
+        return cnt;
+    }
+}
