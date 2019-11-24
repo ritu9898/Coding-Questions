@@ -1,0 +1,75 @@
+/*package whatever //do not write package name here */
+
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class GFG {
+	public static void main (String[] args) throws Exception{
+	
+	    InputStreamReader in = new InputStreamReader(System.in);
+	    BufferedReader br = new BufferedReader(in);
+	    
+	    int t,n;
+	    String s[];
+	    //Enter t ::
+	    t = Integer.parseInt(br.readLine());
+	    while(t-- != 0)
+	    {
+	        //Enter n ::
+	        HashMap<String,Integer> m = new HashMap<String,Integer>();
+	        n = Integer.parseInt(br.readLine());
+	        s = br.readLine().split(" ");
+	        for(int i=0;i<s.length;i++)
+	        {
+	            if(!m.containsKey(s[i]))
+	            {
+	                m.put(s[i],1);
+	            }
+	            else
+	                m.put(s[i],m.get(s[i])+1);
+	        }
+	        Object o[] = new Object[2];
+	        o = maximum(m,s);
+	        System.out.printf(o[0]+" "+o[1]+"\n");
+	    }
+	}
+	
+	
+	static Object[] maximum(HashMap<String,Integer> m,String s[])
+	{
+	    int i,max=0;
+	    String x="";
+	    Stack<String> st = new Stack<>();
+	    Object o[] = new Object[2];
+	    
+	    for(i=0;i<m.size();i++)
+	    {
+	       if(m.get(s[i])>max)
+	       {
+	           max = m.get(s[i]);
+	            x = s[i];   
+	       }
+	    }
+	    
+	    for(i=0;i<m.size();i++)
+	    {
+	        if(m.get(s[i]) == max)
+	            st.push(s[i]);
+	    }
+	    if(st.isEmpty())
+	    {
+	        o[0] = x;
+	        o[1] = max;
+	    }
+	    else
+	    {
+	        Object a[] = new Object[st.size()];
+	        a = st.toArray();
+	        Arrays.sort(a);
+	        o[0] = a[0].toString();
+	        o[1] = max;
+	    }
+	    return o;
+	}
+}
