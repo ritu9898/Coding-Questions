@@ -1,0 +1,57 @@
+import java.io.*; 
+
+public class MyClass{
+
+     public static void main(String []args) throws Exception{
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        
+        int i, skip = 0;
+        String s = br.readLine().trim();
+        skip = Integer.parseInt(br.readLine().trim());
+        
+        String s1[] = s.split("\\.");
+        for(i=0;i<s1.length;i++)
+        {
+            countLength(s1[i], skip);
+        }
+        
+     }
+     
+     public static void countLength(String s, int skip)
+     {
+        int i, j, n = 0;
+        String splitS[] = s.split(" ");
+        StringBuffer sb = new StringBuffer();
+        n = splitS.length;
+        String s1[] = new String[n];
+        
+        if(skip != 0 || skip >= n)
+        {
+            
+            if(n > skip + 1)
+            {
+                j = 0;
+                for(i=n-(skip+1);i>0;i--)
+                {
+                    s1[j++] = splitS[i];
+                    sb.append(splitS[i]+" ");
+
+                }
+                 sb.append(splitS[i]);
+                for(i=n-(skip);i<n;i++)
+                    sb.append(" "+splitS[i]);
+                System.out.print(sb+".");
+            }
+            else
+            {
+                sb.append(s+".");
+                System.out.print(sb.toString().trim());
+            }
+        }
+        else 
+        {
+            sb.append(s+".");
+            System.out.print(sb.toString().trim());
+        }
+     }
+}
